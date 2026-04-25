@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulation Studio | AlgoStudio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+</head>
+<body class="studio-body">
+
+    <div class="studio-container">
+        <!-- LEFT: THEORY & TECHNIQUE MATTER -->
+        <aside class="theory-panel">
+            <a href="index.html" class="back-link">← Home Dashboard</a>
+            <div class="theory-header">
+                <h1 id="algo-name">Algorithm</h1>
+                <div class="complexity-card">
+                    <div class="comp-line"><span>Time Complexity:</span> <b id="time-val">--</b></div>
+                    <div class="comp-line"><span>Space Complexity:</span> <b id="space-val">--</b></div>
+                </div>
+            </div>
+
+            <div class="scroll-matter">
+                <section class="matter-block">
+                    <h3>Technique Matter</h3>
+                    <p id="theory-matter">Detailed explanation of the technique will be displayed here...</p>
+                </section>
+
+                <section class="matter-block">
+                    <h3>Algorithm Steps</h3>
+                    <pre id="code-block" class="code-view"></pre>
+                </section>
+            </div>
+        </aside>
+
+        <!-- RIGHT: VISUALISATION & CONTROLS -->
+        <main class="viz-panel">
+            <h1 class="viz-title">Visualisation</h1>
+
+            <!-- Top Control Bar -->
+            <div class="control-bar">
+                <div class="input-set">
+                    <input type="text" id="csv-input" placeholder="Custom CSV (e.g. 10, 50, 30)">
+                    <button id="random-btn" class="btn-sec">Random Data</button>
+                    <div id="binary-target-ui" style="display:none;">
+                        <input type="number" id="target-val" value="30" title="Search Target">
+                    </div>
+                </div>
+                
+                <div class="action-set">
+                    <button id="play-btn" class="btn-main">PLAY</button>
+                    <button id="pause-btn" class="btn-sec">PAUSE</button>
+                    <button id="stop-btn" class="btn-danger">STOP / RESET</button>
+                    <div class="speed-box">
+                        <label>Speed</label>
+                        <input type="range" id="speed-range" min="100" max="1500" value="600">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visualization Canvas -->
+            <div class="canvas-wrapper">
+                <div id="canvas" class="canvas"></div>
+                <div id="swap-popup" class="swap-indicator">SWAP!</div>
+            </div>
+
+            <!-- Comparison Box at the bottom -->
+            <footer class="comparison-bar">
+                <div class="log-header">LIVE COMPARISON LOG</div>
+                <div id="status-msg" class="log-content">Initializing Simulation...</div>
+            </footer>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
